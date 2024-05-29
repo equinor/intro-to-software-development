@@ -1,0 +1,18 @@
+# Distribution / packaging
+build/
+dist/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+
+# Unit test / coverage reports
+.cache
+.pytest_cache/
+__pycache__/
+
+# Environments
+.env
+.venv
+env/
+venv/
