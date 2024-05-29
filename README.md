@@ -1,8 +1,41 @@
 # Introduction to software development
 
-This repository has two other branches than main: exercises and solution
+## Agenda
 
-Use the exercises branch during the course (which also contains the documentation),
-and the solution branch if you would like to see the solution
+The full agenda can be found under [course_documentation](course_documentation/README.md)
 
-The main branch is not ment to be used.
+## Topics we will cover
+
+- Source control
+  - git and GitHub
+  - commits and writing good commit messages
+  - branches
+  - pull requests and review
+  - GitHub actions (Continuous Integration)
+- Python packaging
+  - packaging structure
+  - pip install
+  - testing
+- Python development
+  - libraries
+  - functions and modules
+- Data science
+  - Introduction
+  - Working with csv files
+  - Numpy, Pandas, dataframes
+  - Visualization and plotting
+  - Machine Learning, Support Vector Machines, Classification, Regression
+- Cyber Security
+
+## Topics we will not cover, but that are useful to know about
+
+- Source control
+  - Rebasing
+  - Cherry-picking
+  - Amending
+  - Fixup commits and autosquash
+- Python packaging
+  - Versioning
+  - Publishing to PyPi
+  - Dockerization
+  - Continuous Deployment
