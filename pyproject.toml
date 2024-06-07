@@ -34,8 +34,15 @@ dynamic = ["version"]
 repository = "https://github.com/equinor/intro-to-software-development"
 
 [project.optional-dependencies]
-dev = ["black", "pytest"]
+dev = ["black", "mypy", "pytest"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 log_cli = false
+
+[tool.mypy]
+no_strict_optional = true
+no_site_packages = true
+ignore_missing_imports = true
+exclude = ["build"]
+files = ["src", "tests"]
