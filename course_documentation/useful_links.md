@@ -1,5 +1,4 @@
 # Useful links
 
-## Writing good commit messages
-
-https://cbea.ms/git-commit/
+- Writing good commit messages: https://cbea.ms/git-commit/
+- Documentation
