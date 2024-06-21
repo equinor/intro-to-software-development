@@ -12,14 +12,13 @@ def gardners_equation(velocity: float, alpha=310.0, beta=0.25) -> float:
 
     https://en.wikipedia.org/wiki/Gardner%27s_relation
 
-    TODO: Include doctest
     """
 
     if velocity < 0:
         raise ValueError(f"Velocity can not be negative, got {velocity}")
 
-    density = alpha * velocity**beta
-    return
+    density: float = alpha * velocity**beta
+    return density
 
 
 # Make the inverse garners equation (compute velocity from density)
