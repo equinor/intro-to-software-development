@@ -7,9 +7,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "geo_calculator"
 authors = [
-    { name = "Thomas Sundvoll", email = "35451859+tsundvoll@users.noreply.github.com" },
-    { name = "Matt Hall" },
     { name = "Lars Petter Øren Hauge" },
+    { name = "Matt Hall" },
+    { name = "Thomas Sundvoll" },
 ]
 description = "Introduction to Software Development course and demo Python package"
 readme = "README.md"
