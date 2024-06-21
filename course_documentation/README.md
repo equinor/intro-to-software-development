@@ -1,27 +1,65 @@
-# Course Agenda
+# Introduction to Software Development, Git and Python
 
-## Warm up quiz
+## Agenda
 
-## First exercise: Setup package strucutre
+Day 1
 
-- Choose a name for your package: "geo-calculator"
-- Create a /src file
-- Create a project file /src/package name
-- Add `__init__.py` file to /src/geo_calculator/
+- Git & Python, Part 1
+- -- Lunch --
+- Git & Python, Part 2
 
-## Versioning
+Day 2
 
-- Add the following to the `__init__.py` file to /src/geo_calculator/
+- Git & Python, Part 3
+- -- Lunch --
+- Cyber Security
 
-```python
-from importlib.metadata import version
+Day 3
 
-__version__ = version(__package__ or __name__)
-```
+- Data Science, Part 1
+- -- Lunch --
+- Data Science, Part 2
 
-- `pip install -e .`
-- Open interactive python
-- `import geo_calculator`
-- Verify that `geo_calculator.__version__` outputs a version
+## Learning goals
 
-## Implement Gardner's equation: https://en.wikipedia.org/wiki/Gardner%27s_relation
+Python and Packaging
+
+- Virtual environments
+- Package structure in Python
+- pip install
+- Functions and parameters
+- Typehinting
+- Modules and imports
+- Testing with pytest
+- Linting with Black
+
+Git and GitHub
+
+- git add, git commit, git push
+- git checkout
+- git pull (git fetch, git rebase)
+- git log, git log --oneline
+- branches, remotes, pull requests
+- review process
+- branch protection rules (optional)
+- Continuous Integration with GitHub Actions
+
+Tooling
+
+- Codespaces on GitHub
+- Configuring VS Code
+
+Cyber Security
+
+Data Science
+
+- Numpy
+- Working with csv files
+- numpy, pandas, dataframes
+- visualization and plotting
+- machine learning, support vector machines, classification, regression
+
+Bonus
+
+- Experiment with typehinting and mypy (add this to the GitHub)
+- rebasing, cherry-picking, amending, fixup, autosquash
