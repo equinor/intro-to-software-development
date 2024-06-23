@@ -32,6 +32,7 @@ Python and Packaging
 - Modules and imports
 - Testing with pytest
 - Linting with Black
+- Dunder methods and attributes (`__file__`, `__init__()`)
 
 Git and GitHub
 
@@ -63,3 +64,6 @@ Bonus
 
 - Experiment with typehinting and mypy (add this to the GitHub)
 - rebasing, cherry-picking, amending, fixup, autosquash
+- Classes and dataclasses
+- Context managers
+- Decorators (pytest)
