@@ -7,7 +7,9 @@ def find_average(numbers: Iterable[float]) -> float:
 
 
 # Insert typical non-linear domain calculations
-def gardners_equation(velocity: float, alpha=310.0, beta=0.25) -> float:
+def gardners_equation(
+    velocity: float, alpha: float = 310.0, beta: float = 0.25
+) -> float:
     """gardners equation
 
     https://en.wikipedia.org/wiki/Gardner%27s_relation
