@@ -26,7 +26,3 @@ def gardners_equation(
 # Make the inverse garners equation (compute velocity from density)
 def inverse_gardners_equation(density: float):
     pass
-
-
-# Shear velocity, Vs to density; if time
-# https://en.wikipedia.org/wiki/Shear_modulus
