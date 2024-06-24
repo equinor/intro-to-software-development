@@ -1,88 +1,80 @@
 # Introduction to Software Development, Git and Python
 
-## Content
-
-In this course, we will set up a simple Python package. It will concern some simple
-calculations within the geology domain, so we will name it `geo-calculator`.
-
-Along the way, you will get familiar with the packaging structure of Python and how a
-modern Python package typically looks.
-
-We will also embed git into our workflow, learn / refresh the basic git commands, and
-possibly touch upon some more advanced commands.
-
-Quite early we will write some unit tests, which verify intended functionality.
-
-We will set up a workflow in GitHub Actions for doing continuous integration with your
-remote repository, including running your tests and static code analysis.
-
-Towards the end of this section we will use what we have learned to implement the
-calculation of a specified geological property.
-
-The main learning goal is to be familiar with the development process, and learn some
-software craftsmanship along the way.
-
 ## Agenda
 
 Day 1
 
-- 09:00 Git & Python, Part 1
-  - Introduction
-    - Round around the table
-      - Name
-      - Where and what you study
-      - Internship location (Trondheim, Bergen, Stavanger, Oslo?)
-      - Short about the project
-      - Optionally what you hope to learn in the course
-- 11:30 -- Lunch --
-- 13:00 Git & Python, Part 2
+- 09:00 Git & Python, Part 1 (Lars Petter Øren Hauge and Thomas Sundvoll)
+  - [Introduction](introduction.md)
+  - [Exercise 0: Working Environment](exercises/0_working_environment.md)
+  - [Exercise 1: Setup Package Structure](exercises/1_setup_package_structure.md)
+- 11:30 Lunch
+- 13:00 Git & Python, Part 2 (Lars Petter Øren Hauge and Thomas Sundvoll)
+  - [Exercise 2: Writing Your First Test](exercises/2_writing_you_first_test.md)
+  - [Exercise 3: Continuous Integration](exercises/3_continuous_integration.md)
 
 Day 2
 
-- 09:00 Git & Python, Part 3
-- 11:30 -- Lunch --
-- 13:00 Application Security
+- 09:00 Git & Python, Part 3 (Lars Petter Øren Hauge and Thomas Sundvoll)
+  - Recap from yesterday
+  - [Exercise 4: Implement Gardner's Equation](exercises/4_implement_gardners_equation.md)
+- 11:30 Lunch
+- 13:00 Application Security (Andrea Brambilla)
+  - 13:00-13:30 Threat landscape & AppSec (Arne Kristian Jansen)
+  - 13:30-14:00 Snyk demo (Andrea Brambilla)
+  - 14:00-14:10 Break
+  - 14:10-15:30 LLM Hacking (Stein-Arne Sivertsen)
 
 Day 3
 
-- 09:00 Data Science, Part 1
-- 11:30 -- Lunch --
-- 13:00 Data Science, Part 2
+- 09:00 Data Science, Part 1 (Matt Hall)
+- 11:30 Lunch
+- 13:00 Data Science, Part 2 (Matt Hall)
 
 ## Learning goals
 
-Python and Packaging
+### Python and Packaging
 
 - Virtual environments
-- Package structure in Python
+- The structure of a Python package
 - pip install
 - Functions and parameters
-- Documentation in docstrings (https://peps.python.org/pep-0257/)
-- Typehinting
 - Modules and imports
-- Testing with pytest
-- Linting with Black
-- Dunder methods and attributes (`__file__`, `__init__()`)
+- Context managers
+- Testing with pytest, Test Driven Development
+- Typehinting, [PEP484](https://peps.python.org/pep-0484/)
+- Formatting with Black, [PEP8](https://peps.python.org/pep-0008/)
+- Documentation in docstrings, [PEP257](https://peps.python.org/pep-0257/)
+- (optional) Classes and dataclasses
+- (optional) Error handling (try / catch)
+- (optional) Dunder methods and attributes (`__file__`, `__init__()`)
+- (optional) Pytest fixtures and parameterize
+- (optional) Decorators
 
-Git and GitHub
+### Git and GitHub
 
-- git add, git commit, git push
-- git checkout
-- git pull (git fetch, git rebase)
-- git log, git log --oneline
-- branches, remotes, pull requests
-- review process
-- branch protection rules (optional)
+- Git Commands
+  - git status, git diff
+  - git add -p, git commit, git push
+  - git checkout
+  - git pull (git fetch, git rebase)
+  - git log, git log --oneline
+  - git remote -v
+  - git fetch, git rebase
+  - (optional) git commit --amend, git commit --fixup, git rebase -i --autosquash
+  - (optional) git cherry-pick
+- Branches, Remotes, Pull Requests
+- The review process
+- Branch protection rules (optional)
 - Continuous Integration with GitHub Actions
 
-Tooling
+### Application Security
 
-- Codespaces on GitHub
-- Configuring VS Code
+- Threat landscape & AppSec
+- Snyk
+- LLM Hacking
 
-Cyber Security
-
-Data Science
+### Data Science
 
 - Numpy
 - Working with csv files
@@ -90,40 +82,6 @@ Data Science
 - visualization and plotting
 - machine learning, support vector machines, classification, regression
 
-Bonus
+## Useful links
 
-- Experiment with typehinting and mypy (add this to the GitHub)
-- rebasing, cherry-picking, amending, fixup, autosquash
-- Classes and dataclasses
-- Context managers
-- Decorators (pytest)
-- Error handling (try / catch)
-- Input sanitaion (velocity < 0 for gardners equation)
-- Auto-formatting in VS Code (linelength 88)
-
-## Ideas for further exercises
-
-- Set up your own new github repository
-  - Configure Pull Request (Allow rebase merging)
-  - Add branch protection to require PR
-
-## Course outline
-
-1. Setup package structure
-   - Create files
-   - Commit work to local
-   - Push to remote
-2. Writing your first test
-   - TDD; make failing test, then let it pass
-   - implement find_average
-   - Present some benefits of writing good tests (in advance). E.g. change code with confidence later
-3. Continuous integration
-   - Add workflow
-   - Add formating
-   - Add typehinting
-   - Create Pull Request (make this mandatory on your fork)
-4. Implement gardners equation
-   - Receive a finished test for gardners equation
-   - Bonus: Play around with Pytest approx. Find out from docs what the default tolerance is
-   - Receive a finished test (skipped) for inverse gardners equation
-   - Bonus: Add requirement to handle negative velocity (new test, skipped initially)
+A couple of useful links are provided [here](useful_links.md).
