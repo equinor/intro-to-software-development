@@ -6,7 +6,7 @@ def find_average(numbers: list[float]) -> float:
 
 
 def gardners_equation(
-    velocity: float, alpha: float = 310.0, beta: float = 0.25
+    velocity: float, alpha: float = 0.31, beta: float = 0.25
 ) -> float:
     """Calculate bulk density of lithology based on seismic P-wave velocity
 
@@ -15,7 +15,7 @@ def gardners_equation(
         alpha (float): Empirically derived constant.
         beta (float): Empirically derived constant.
     Returns:
-        density (float): Bulk density in kg/m3.
+        density (float): Bulk density in g/cm3.
     Raises:
         ValueError: If the velocity is negative.
 
@@ -31,12 +31,12 @@ def gardners_equation(
 
 
 def inverse_gardners_equation(
-    density: float, alpha: float = 310.0, beta: float = 0.25
+    density: float, alpha: float = 0.31, beta: float = 0.25
 ) -> float:
     """Calculate seismic P-wave velocity based on bulk density of lithology
 
     Args:
-        density (float): Bulk density in kg/m3.
+        density (float): Bulk density in g/cm3.
         alpha (float): Empirically derived constant.
         beta (float): Empirically derived constant.
     Returns:
