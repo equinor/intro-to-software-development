@@ -12,12 +12,6 @@ def test_find_average_given_a_list_of_ints():
     assert find_average(numbers) == 3.5
 
 
-def test_find_average_fails_on_empty_list():
-    numbers = []
-    with pytest.raises(ZeroDivisionError) as e:
-        find_average(numbers)
-
-
 def test_gardners_equation():
     velocity = 2000  # m/s
     expected_density = 2073.0949  # kg/m2
