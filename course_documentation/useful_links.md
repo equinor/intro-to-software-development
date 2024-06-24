@@ -1,4 +1,4 @@
 # Useful links
 
-- Writing good commit messages: https://cbea.ms/git-commit/
-- Documentation
+- https://developer.equinor.com/; Portal for Developers in Equinor
+- https://cbea.ms/git-commit/; Good article on writing commit messages
