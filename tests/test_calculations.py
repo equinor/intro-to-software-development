@@ -40,7 +40,7 @@ def test_gardners_equation_negative_velocity() -> None:
         gardners_equation(velocity)
 
 
-def test_inverse_gardners_equation_negative_velocity() -> None:
+def test_inverse_gardners_equation_negative_density() -> None:
     density = -1000  # g/cm3
     with pytest.raises(ValueError) as e:
         inverse_gardners_equation(density)
