@@ -38,6 +38,6 @@
       ]
     }
   },
-  "postCreateCommand": "git config --global include.path "$PWD"/.gitconfig",
+  "postCreateCommand": "git config --global include.path ${containerWorkspaceFolder}/.gitconfig",
   "remoteUser": "vscode"
 }
