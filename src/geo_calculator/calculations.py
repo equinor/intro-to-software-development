@@ -5,6 +5,12 @@ from typing import Sequence
 
 
 def find_average(numbers: Sequence[int]) -> float:
+    """Calculate the average of some numbers
+    Args:
+        numbers (Sequence[int]): A sequence of numbers
+    Returns:
+        (float): The average value of the numbers
+    """
     return sum(numbers) / len(numbers)
 
 
