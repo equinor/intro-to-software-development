@@ -39,7 +39,7 @@ geo_calculator.__file__
   - Version control
   - Distributed
   - Snapshots
-  - What is the hashes and tags
+  - What are the hashes and tags
   - Commit messages
   - git status
   - git log

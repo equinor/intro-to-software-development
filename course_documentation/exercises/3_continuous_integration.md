@@ -21,6 +21,7 @@ jobs:
 ```yaml
 jobs:
   build:
+   ...
    steps:
    ...
       - name: Install dependencies
@@ -32,6 +33,7 @@ jobs:
 ```yaml
 jobs:
   build:
+   ...
    steps:
    ...
       - name: Test with pytest
@@ -48,8 +50,14 @@ dev = ["pytest"]
 
 ## Run formatting
 
+- Run `black --help` to see the help text with an usage guide
+- Run `black --check .`
+- Run `black --diff .`
+- Run `black .` to let Black format all your .py files in the current directory
+
 ## Run typehinting
 
-## Run failing tests
+- Run `mypy --help` for help text
+- Run `mypy` or `mypy .` to check all your .py files in the current directory
 
-## Make a PR and see that the tests fail
+## Make a PR and see that the formatting and typehinting fails
