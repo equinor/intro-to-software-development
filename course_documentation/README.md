@@ -1,5 +1,27 @@
 # Introduction to Software Development, Git and Python
 
+## Content
+
+In this course, we will set up a simple Python package. It will concern some simple
+calculations within the geology domain, so we will name it `geo-calculator`.
+
+Along the way, you will get familiar with the packaging structure of Python and how a
+modern Python package typically looks.
+
+We will also embed git into our workflow, learn / refresh the basic git commands, and
+possibly touch upon some more advanced commands.
+
+Quite early we will write some unit tests, which verify intended functionality.
+
+We will set up a workflow in GitHub Actions for doing continuous integration with your
+remote repository, including running your tests and static code analysis.
+
+Towards the end of this section we will use what we have learned to implement the
+calculation of a specified geological property.
+
+The main learning goal is to be familiar with the development process, and learn some
+software craftsmanship along the way.
+
 ## Agenda
 
 Day 1
