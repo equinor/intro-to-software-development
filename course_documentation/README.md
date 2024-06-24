@@ -4,21 +4,28 @@
 
 Day 1
 
-- Git & Python, Part 1
-- -- Lunch --
-- Git & Python, Part 2
+- 09:00 Git & Python, Part 1
+  - Introduction
+    - Round around the table
+      - Name
+      - Where and what you study
+      - Internship location (Trondheim, Bergen, Stavanger, Oslo?)
+      - Short about the project
+      - Optionally what you hope to learn in the course
+- 11:30 -- Lunch --
+- 13:00 Git & Python, Part 2
 
 Day 2
 
-- Git & Python, Part 3
-- -- Lunch --
-- Cyber Security
+- 09:00 Git & Python, Part 3
+- 11:30 -- Lunch --
+- 13:00 Application Security
 
 Day 3
 
-- Data Science, Part 1
-- -- Lunch --
-- Data Science, Part 2
+- 09:00 Data Science, Part 1
+- 11:30 -- Lunch --
+- 13:00 Data Science, Part 2
 
 ## Learning goals
 
@@ -28,6 +35,7 @@ Python and Packaging
 - Package structure in Python
 - pip install
 - Functions and parameters
+- Documentation in docstrings (https://peps.python.org/pep-0257/)
 - Typehinting
 - Modules and imports
 - Testing with pytest
@@ -67,3 +75,33 @@ Bonus
 - Classes and dataclasses
 - Context managers
 - Decorators (pytest)
+- Error handling (try / catch)
+- Input sanitaion (velocity < 0 for gardners equation)
+- Auto-formatting in VS Code (linelength 88)
+
+## Ideas for further exercises
+
+- Set up your own new github repository
+  - Configure Pull Request (Allow rebase merging)
+  - Add branch protection to require PR
+
+## Course outline
+
+1. Setup package structure
+   - Create files
+   - Commit work to local
+   - Push to remote
+2. Writing your first test
+   - TDD; make failing test, then let it pass
+   - implement find_average
+   - Present some benefits of writing good tests (in advance). E.g. change code with confidence later
+3. Continuous integration
+   - Add workflow
+   - Add formating
+   - Add typehinting
+   - Create Pull Request (make this mandatory on your fork)
+4. Implement gardners equation
+   - Receive a finished test for gardners equation
+   - Bonus: Play around with Pytest approx. Find out from docs what the default tolerance is
+   - Receive a finished test (skipped) for inverse gardners equation
+   - Bonus: Add requirement to handle negative velocity (new test, skipped initially)
