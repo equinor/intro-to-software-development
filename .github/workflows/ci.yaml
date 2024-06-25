@@ -29,3 +29,9 @@ jobs:
       - name: Check code formatting
         run: |
           black --check .
+          
+      - name: Type checking
+        continue-on-error: true
+        run: |
+          mypy
+

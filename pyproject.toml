@@ -28,4 +28,5 @@ dynamic = ["version"]
 repository = "https://github.com/Starcko/intro-to-software-development"
 
 [project.optional-dependencies]
-dev = ["black", "pytest"]
+dev = ["mypy", "black", "pytest"]
+
