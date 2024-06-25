@@ -113,15 +113,14 @@
 - Extend the dev requirements in pyproject.toml to be `dev = ["black", "pytest"]`
 - Add Black check to the ci.yaml workflow file:
 
-```yaml
-...
+  ```yaml
   ...
     ...
-      - name: Check code formatting
-        continue-on-error: true
-        run: |
-          black --check .
-```
+      ...
+        - name: Check code formatting
+          run: |
+            black --check .
+  ```
 
 ## Commit changes
 
@@ -138,15 +137,16 @@
 - Extend the dev requirements in pyproject.toml to be `dev = ["black", "mypy", "pytest"]`
 - Add
 
-```yaml
-...
+- Add the following to ci.yaml
+
+  ```yaml
   ...
     ...
-      - name: Type checking
-        continue-on-error: true
-        run: |
-          mypy
-```
+      ...
+        - name: Type checking
+          run: |
+            mypy
+  ```
 
 - Add type hints to the `find_average` function.
   <a title="def find_average(numbers: Sequence[int]) -> float:"> (Hover for hint) </a>
