@@ -135,7 +135,13 @@
 - Run `mypy --help` for help text
 - Run `mypy` or `mypy .` to check all your .py files in the current directory
 - Extend the dev requirements in pyproject.toml to be `dev = ["black", "mypy", "pytest"]`
-- Add
+- Add a new section in pyproject.toml:
+
+  ```yaml
+  [tool.mypy]
+  exclude = ["build"]
+  files = ["src", "tests"]
+  ```
 
 - Add the following to ci.yaml
 
