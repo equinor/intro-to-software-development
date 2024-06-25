@@ -26,3 +26,6 @@ dynamic = ["version"]
 
 [project.urls]
 repository = "https://github.com/Jonelix/intro-to-software-development"
+
+[project.optional-dependencies]
+dev = ["black", "mypy", "pytest"]
