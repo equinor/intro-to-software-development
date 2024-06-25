@@ -28,8 +28,13 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-          
+
       - name: Check code formatting
         continue-on-error: true
         run: |
           black --check .
+
+      - name: Type checking
+        continue-on-error: true
+        run: |
+          mypy
