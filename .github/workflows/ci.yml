@@ -37,4 +37,3 @@ jobs:
         continue-on-error: true
         run: |
           mypy
-
