@@ -28,8 +28,7 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-          
-      - name: Check code formatting
-        continue-on-error: true
+
+      - name: Check code formattinggit
         run: |
           black --check .
