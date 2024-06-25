@@ -25,4 +25,7 @@ dependencies = ["numpy"]
 dynamic = ["version"]
 
 [project.urls]
-repository = "https://github.com/<your_github_username>/intro-to-software-development"
+repository = "https://github.com/Starcko/intro-to-software-development"
+
+[project.optional-dependencies]
+dev = ["pytest"]
