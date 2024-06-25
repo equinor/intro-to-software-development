@@ -1,10 +1,10 @@
 def find_average(numbers):
-    tot = 0  
+    tot = 0
     for n in numbers:
         tot += n
 
-    if len(numbers)!= 0:
+    if len(numbers) != 0:
         return tot / len(numbers)
-    
-    else: 0
-    
+
+    else:
+        return 0
