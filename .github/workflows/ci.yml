@@ -32,3 +32,8 @@ jobs:
       run: |
           black --check .
 
+    - name: Type checking
+      continue-on-error: true
+      run: |
+          mypy
+
