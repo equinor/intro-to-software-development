@@ -28,4 +28,8 @@ dynamic = ["version"]
 repository = "https://github.com/Sunnivar/intro-to-software-development"
 
 [project.optional-dependencies]
-dev = ["black", "pytest"]
+dev = ["black", "mypy", "pytest"]
+
+[tool.mypy]
+exclude = ["build"]
+files = ["src", "tests"]
