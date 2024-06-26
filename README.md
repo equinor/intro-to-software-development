@@ -1,7 +1,7 @@
-# Introduction to software development more stuff hey
+# Introduction to software development more stuff hey ho
 
 
-hello world
+hello world and people
 
 adding things
 

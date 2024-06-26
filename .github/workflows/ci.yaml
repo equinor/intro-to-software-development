@@ -33,3 +33,7 @@ jobs:
       - name: Check code formatting
         run: |
           black --check .
+
+      - name: Type checking
+        run: |
+          mypy
