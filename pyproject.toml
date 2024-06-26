@@ -30,3 +30,7 @@ repository = "https://github.com/Starcko/intro-to-software-development"
 [project.optional-dependencies]
 dev = ["mypy", "black", "pytest"]
 
+[tool.mypy]
+exclude = ["build"]
+files = ["src", "tests"]
+
