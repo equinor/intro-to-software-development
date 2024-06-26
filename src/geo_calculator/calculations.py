@@ -15,4 +15,18 @@ def gardners_equation(velocity: float) -> float:
     Returns:
         The density
     """
+    if velocity < 0:
+        raise ValueError
     return 0.31 * velocity ** (1 / 4)
+
+
+def inverse_gardners_equation(density: float) -> float:
+    """Calculate the velocity
+    Args:
+        density: A density in g/cm3
+    Returns:
+        The Velocity
+    """
+    if density < 0:
+        raise ValueError
+    return (density / 0.31) ** 4
