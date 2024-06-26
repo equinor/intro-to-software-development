@@ -9,6 +9,8 @@ def use() -> None:
     my_average: float = find_average([1, 2, 3])
     print(my_average)
 
+def gardners_equation(vel):
+    return 0.31*vel**(0.25)
 
 if __name__ == "__main__":
     use()
