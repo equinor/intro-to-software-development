@@ -35,4 +35,4 @@ jobs:
 
       - name: Type checking
         run: |
-          mypy --check .
+          mypy
