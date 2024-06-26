@@ -34,4 +34,7 @@ jobs:
         run: |
           black --check .
 
+    - name: Type checking
+        run: |
+          mypy
 
