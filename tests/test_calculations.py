@@ -3,10 +3,16 @@ import pytest
 
 
 def test_find_average_given_a_list_of_ints() -> None:
+    """
+    Tests the find_average function
+    """
     numbers = [1, 2, 3, 4, 5, 6]
     assert find_average(numbers) == 3.5
 
 def test_gardners_equation():
+    """
+    Tests the gardner equation from calculations.py
+    """
     velocity = 2000  # m/s
     expected_density = 2.0730949  # g/cm3
 
