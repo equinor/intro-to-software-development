@@ -12,9 +12,13 @@ def use() -> None:
     my_average: float = find_average([1, 2, 3])
     print(my_average)
 
-def gardners_equation(vel):
+def gardners_equation(vel) -> float:
     """
     Takes in the P-wave velocity in m/s, and returns the bulk density in g/cm^3
+    Args:
+        vel = the P-wave velocity in m/s
+    Returns:
+        The bulk density in g/cm^3
     """
     return 0.31*vel**(0.25)
 
