@@ -1,0 +1,37 @@
+# https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+
+[build-system]
+requires = ["setuptools>=64.0", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-calculator"
+authors = [{ name = "Olav Irgens" }]
+description = "Introduction to Software Development course and demo Python package"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Alfa",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = ["numpy"]
+dynamic = ["version"]
+
+[project.urls]
+repository = "https://github.com/<your_github_username>/intro-to-software-development"
+
+[project.optional-dependencies]
+dev = ["black", "mypy", "pytest"]
+
+[tool.mypy]
+exclude = ["build"]
+files = ["src", "tests"]
