@@ -22,7 +22,7 @@ dynamic = ["version"]
 repository = "https://github.com/equinor/intro-to-software-development"
 
 [project.optional-dependencies]
-dev = ["black", "mypy", "pytest"]
+dev = ["black", "mypy", "pytest", "pytest-mock"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
