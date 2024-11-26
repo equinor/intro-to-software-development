@@ -27,14 +27,14 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Physics",
     "Topic :: Software Development :: Libraries",
 ]
-dependencies = ["numpy"]
+dependencies = ["numpy", "pygame"]
 dynamic = ["version"]
 
 [project.urls]
 repository = "https://github.com/equinor/intro-to-software-development"
 
 [project.optional-dependencies]
-dev = ["black", "mypy", "pytest"]
+dev = ["black", "mypy", "pytest", "pytest-mock"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
