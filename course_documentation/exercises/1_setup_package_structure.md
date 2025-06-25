@@ -36,20 +36,8 @@
   authors = [{ name = "<Your name here>" }]
   description = "Introduction to Software Development course and demo Python package"
   readme = "README.md"
-  requires-python = ">=3.10"
+  requires-python = ">=3.13"
   license = { file = "LICENSE" }
-  classifiers = [
-      "Development Status :: 3 - Alfa",
-      "Intended Audience :: Developers",
-      "Intended Audience :: Science/Research",
-      "License :: OSI Approved :: MIT License",
-      "Natural Language :: English",
-      "Programming Language :: Python :: 3",
-      "Programming Language :: Python :: 3.10",
-      "Topic :: Scientific/Engineering",
-      "Topic :: Scientific/Engineering :: Physics",
-      "Topic :: Software Development :: Libraries",
-  ]
   dependencies = ["numpy"]
   dynamic = ["version"]
 
