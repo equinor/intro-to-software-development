@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. Git diff three split",
+      "dependsOn": [
+        "Git diff",
+        "Git diff staged",
+        "Git log"
+      ],
+      "group": "build",
+      "presentation": {
+        "focus": true
+      }
+    },
+    {
+      "label": "Git log",
+      "command": "watch",
+      "type": "shell",
+      "args": [
+        "-n",
+        "1",
+        "--color",
+        "git",
+        "lg",
+        "--color=always"
+      ],
+      "presentation": {
+        "group": "build"
+      },
+    },
+    {
+      "label": "Git diff",
+      "type": "shell",
+      "command": "watch",
+      "args": [
+        "-n",
+        "1",
+        "--color",
+        "git",
+        "diff",
+        "-U0",
+        "--color=always"
+      ],
+      "presentation": {
+        "group": "build"
+      },
+    },
+    {
+      "label": "Git diff staged",
+      "type": "shell",
+      "command": "watch",
+      "args": [
+        "-n",
+        "1",
+        "--color",
+        "git",
+        "diff",
+        "-U0",
+        "--staged",
+        "--color=always"
+      ],
+      "presentation": {
+        "group": "build"
+      },
+    },
+  ]
+}
