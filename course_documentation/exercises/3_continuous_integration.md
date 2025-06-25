@@ -81,7 +81,23 @@
 - `git commit -m "Add ci workflow"`
 - `git push origin add-ci-workflow`
 
-- In GitHub, make a Pull Request from the `add-ci-workflow` branch to the `main` branch. Wait a bit with accepting the PR.
+- In GitHub, make a Pull Request from the `add-ci-workflow` branch to the `main` branch of your fork.
+
+## Accept the PR
+
+- Review your PR on GitHub.
+- Click the "Rebase and merge" button on GitHub
+- Delete the branch on the remote origin (Press the button on GitHub)
+- Delete the local branch
+  - `git lg` to see the current shape of your history
+  - `git fetch origin --prune`
+  - `git rebase origin/main`
+  - `git checkout origin/main` or (`git checkout main` and `git rebase origin/main`)
+  - `git branch -d add-ci-workflow`
+
+# Bonus
+
+The following sections might not be included in the course, depending on time, but we add it here for reference.
 
 ## Check code formatting
 
@@ -122,7 +138,7 @@
             black --check .
   ```
 
-## Commit changes
+### Commit changes
 
 - `git add -p`
 - `git commit -m "Add code formatting check`
@@ -157,7 +173,7 @@
 - Add type hints to the `find_average` function.
   <a title="def find_average(numbers: Sequence[int]) -> float:"> (Hover for hint) </a>
 
-## Commit, push and observe the changes to the PR
+### Commit, push and observe the changes to the PR
 
 - `git add -p`
 - `git commit -m "Add type checking`
@@ -166,16 +182,3 @@
 ## Break the workflow
 
 - Experiment with adding changes that breaks either the tests, the formatting or the static type checking
-
-## Accept the PR
-
-- Restore PR to a working state.
-  - You can remove unwanted commits with `git rebase -i origin/main`
-- Click the "Rebase and merge" button on GitHub
-- Delete the branch on the remote origin (Press the button on GitHub)
-- Delete the local branch
-  - `git lg` to see the current shape of your history
-  - `git fetch origin --prune`
-  - `git rebase origin/main`
-  - `git checkout origin/main` or (`git checkout main` and `git rebase origin/main`)
-  - `git branch -d add-ci-workflow`

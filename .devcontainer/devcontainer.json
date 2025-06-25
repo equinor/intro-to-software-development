@@ -9,7 +9,7 @@
       "VARIANT": "3.13-bullseye",
     }
   },
-   "customizations": {
+  "customizations": {
     "vscode": {
       // Set *default* container specific settings.json values on container create.
       "settings": {
@@ -25,7 +25,9 @@
         "python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
         "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
         "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
-        "github.copilot.enable": { "*": false },
+        "github.copilot.enable": {
+          "*": false
+        },
         "github.chat.agent.enabled": false,
         "github.copilot.chat.agent.autoFix": false,
         "github.copilot.inlineSuggest.enable": false,

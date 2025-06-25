@@ -3,28 +3,22 @@
 ## Add test
 
 - Create /tests/test_calculations.py in VS code, or with:
-- `mkdir tests`, `cd tests` and `touch test_calculations.py`
 
-- In the `test_calculations.py` paste the following:
+  - `mkdir tests`, `cd tests` and `touch test_calculations.py`
+
+- EXERCISE: In the `test_calculations.py`, write a test to test a find_average function that takes a list of numbers and returns the average. Assert that the returned average is correct. The find_average function does not yet exist, but that is intentional for now.
+
+This is an example test that checks the length of a string:
 
 ```python
-from geo_calculator.calculations import find_average
-
-def test_find_average_given_a_list_of_ints() -> None:
-    numbers = [1, 2, 3, 4, 5, 6]
-    assert find_average(numbers) == 3.5
+def test_length_of_string() -> None:
+    test_string = "python"
+    assert len(test_string) == 6
 ```
 
-- This is how you would typically write a simple test. Importing the function you want to test from the relevant package in your module. `geo_calculator` is the package, `calculations` is the module and `find_average` is the function.
+- Start by importing the function you want to test from the relevant package in your module. `geo_calculator` is the package, `calculations` is the module and `find_average` is the function.
+  (Hint: `from geo_calculator.calculations import find_average`)
 - We have not implemented this function yet, so we expect the test to fail. But this is a good starting point for Test Driven Development. First, write the test. Second, run it and see that it fails. Third, implement the function so that the test pass. Finally, refactor your solution if needed.
-- By adding tests to your code you get a lot of benefits:
-  - You can verify that your code works as intended while you write it, at least the parts you manage to write tests for to.
-  - You can change parts of your code later with confidence, because you know you have tests that will tell you if you break something.
-  - The tests serves as documentation for how you intend the code to be used.
-- You can always write the tests later, but there are many benefits to writing them before you implement a single line of code:
-  - You clearify the requirements before you start implementing.
-  - It is more fun doing the implementation, because you know when you are done (the test pass). It can even shorten the time it takes to write the implementation.
-  - When the tests are written together with the implementation it makes the life easier for the reviewer. He or she can start with reading the test to get a good first grasp of the problem at hand, and then look at the implementation.
 
 ## Install and run tests
 
@@ -35,6 +29,17 @@ def test_find_average_given_a_list_of_ints() -> None:
 ## Make test pass
 
 - Up to you now...
+
+## Reflections
+
+- By adding tests to your code you get a lot of benefits:
+  - You can verify that your code works as intended while you write it, at least the parts you manage to write tests for to.
+  - You can change parts of your code later with confidence, because you know you have tests that will tell you if you break something.
+  - The tests serves as documentation for how you intend the code to be used.
+- You can always write the tests later, but there are many benefits to writing them before you implement a single line of code:
+  - You clearify the requirements before you start implementing.
+  - It is more fun doing the implementation, because you know when you are done (the test pass). It can even shorten the time it takes to write the implementation.
+  - When the tests are written together with the implementation it makes the life easier for the reviewer. He or she can start with reading the test to get a good first grasp of the problem at hand, and then look at the implementation.
 
 ## git commit
 
