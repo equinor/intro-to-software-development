@@ -23,10 +23,10 @@
     ...
       ...
         ...
-          - name: Set up Python 3.10
+          - name: Set up Python 3.13
             uses: actions/setup-python@v5
             with:
-              python-version: "3.10"
+              python-version: "3.13"
     ```
 
   - Then, install dependencies (including dev dependencies):
