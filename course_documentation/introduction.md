@@ -4,36 +4,35 @@
 
 - Name
 - Where and what you study
-- Internship location (Trondheim, Bergen, Stavanger, Oslo?)
+- Internship location (Trondheim, Bergen, Stavanger, Oslo)
 - Short about the project
 - Optionally what you hope to learn in the course
 
 ## Content for the Git & Python parts
 
-In this part of course, we will set up a simple Python package. It will concern some simple
-calculations within the geology domain, so we will name it `geo-calculator`.
-
-Along the way, you will get familiar with the packaging structure of Python and how a
-modern Python package typically looks.
-
-We will also embed git into our workflow, learn / refresh the basic git commands, and
-possibly touch upon some more advanced commands.
-
-Quite early we will write some unit tests, which verify intended functionality.
-
-We will set up a workflow in GitHub Actions for doing continuous integration with your
-remote repository, including running your tests and static code analysis.
-
-Towards the end of this section we will use what we have learned to implement the
-calculation of a specified geological property.
+- The packaging structure of Python and how a modern Python
+  package typically looks.
+- Unit tests and the concept of Test Driven Development
+- How to embed git into our workflow with basic commands (and possibly some more advanced
+  if we have time)
+- How to set up a workflow in GitHub Actions for doing Continuous Integration with your
+  remote repository, including running your tests and static code analysis.
+- Use what we have learned to implement the calculation of a specified geological property
 
 The main learning goal is to be familiar with the development process, and learn some
 software craftsmanship along the way.
 
+We assume generall knowledge of Python and will not go through the syntax explicitly,
+but please ask immediately if something is unclear or you want it covered a bit more.
+
+For the morning session tomorrow, Tuesday, we want to open up for requests from you for what you want us to cover. You can make suggestions by creating an issue here: https://github.com/equinor/intro-to-software-development/issues.
+
 ## Exercises
 
-- The exercises are described in "course_documentation/exercises".
-- Disclaimer for the exercises: There are probably errors and discrepancies in the exercise descriptions. We will walk through the exercises together. If there are inconsistencies or something is off / missing; do as I say, not as I wrote. And not the least, ask questions and help each other.
+- The exercises are described in `course_documentation/exercises`.
+- You will get the chance to solve the exercises on your own first, before walk
+  through them together.
+- Please ask questions as we go and help each other out on the different locations.
 
 ## Course outline
 
@@ -56,4 +55,4 @@ software craftsmanship along the way.
    - Bonus: Play around with Pytest approx. Find out from docs what the default tolerance is
    - Receive a finished test (skipped) for inverse gardners equation
    - Bonus: Add requirement to handle negative velocity (new test, skipped initially)
-5. Optional Exercises
+5. Optional Exercises or a topic on request from you
