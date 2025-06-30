@@ -28,3 +28,7 @@ jobs:
     - name: Test with pytest
       run:
         pytest
+
+    - name: Type checking
+      run:
+        mypy
