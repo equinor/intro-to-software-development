@@ -9,6 +9,8 @@ If you have not done so already, follow the guides in [Exercise 0](0_working_env
 Create a file 'tests/rolling_stone/test_player.py'
 
 ```python
+from geo_calculator.rolling_stone import Player
+
 def test_player():
     player = Player()
     assert isinstance(player, Player)
@@ -56,6 +58,7 @@ and edit the previous tests to use this. For example like this:
 ```python
 def test_player(new_player):
     assert isinstance(new_player, Player)
+    assert new_player.score = 0
 ```
 
 ## 4. Mock
@@ -72,7 +75,7 @@ def test_input_name_for_player(mocker, new_player):
     # Arrange
     TEST_NAME = "Ola Nordmann"
     mocker.patch.object(
-        Player, "\_get_name_for_player_from_input", return_value=TEST_NAME
+        Player, "_get_name_for_player_from_input", return_value=TEST_NAME
     )
     assert new_player.name is None
 
