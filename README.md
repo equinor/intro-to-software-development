@@ -27,6 +27,11 @@ Day 3
 - 11:30 Lunch
 - 13:00 Data Science, Part 2 (Martin Bjerke and Phillipe Nivlet)
 
+
+Day 4
+- Go home
+- Go home again
+
 ## Learning goals
 
 ### Python and Packaging
