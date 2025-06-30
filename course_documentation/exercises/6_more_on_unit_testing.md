@@ -9,7 +9,7 @@ If you have not done so already, follow the guides in [Exercise 0](0_working_env
 Create a file 'tests/rolling_stone/test_player.py'
 
 ```python
-from geo_calculator.rolling_stone import Player
+from geo_calculator.rolling_stone.player import Player
 
 def test_player():
     player = Player()
