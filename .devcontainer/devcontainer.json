@@ -5,7 +5,7 @@
   "build": {
     "dockerfile": "Dockerfile",
     "context": "..",
-    "args": {
+    "args": { add-ci-workflow
       "VARIANT": "3.13-bullseye"
     }
   },
