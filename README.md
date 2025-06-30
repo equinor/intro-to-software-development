@@ -30,6 +30,7 @@ Day 3
 
 Day 4
 - Go home
+- Go home again
 
 ## Learning goals
 
