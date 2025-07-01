@@ -12,12 +12,29 @@ Day 1
 - 13:00 Git & Python, Part 2 (Lars Petter Øren Hauge and Thomas Sundvoll)
   - [Exercise 2: Writing Your First Test](course_documentation/exercises/2_writing_you_first_test.md)
   - [Exercise 3: Continuous Integration](course_documentation/exercises/3_continuous_integration.md)
+  - [Exercise 4: Implement Gardner's Equation](course_documentation/exercises/4_implement_gardners_equation.md)
 
 Day 2
 
 - 09:00 Git & Python, Part 3 (Lars Petter Øren Hauge and Thomas Sundvoll)
   - Recap from yesterday
-  - [Exercise 4: Implement Gardner's Equation](course_documentation/exercises/4_implement_gardners_equation.md)
+    - Setup codespaces and virtual environment
+    - Python packaging structure
+    - Intro to Git
+    - Intro to Test Driven Development (TDD) and unit tests with pytest
+    - Continuous Integration with GitHub Actions
+    - Implementing Gardner's Equation with TDD
+  - Intermediate Git: Git merge and git rebase
+  - Intermediate GitHub Actions
+    - Recap from yesterday
+    - Some example from one of our repositories:
+      - https://github.com/equinor/isar/tree/main/.github/workflows
+  - Intermediate Pytest
+    - [Exercise 6: More on unit testing](course_documentation/exercises/6_more_on_unit_testing.md)
+  - Refactoring
+    - [Exercise 7: More on unit testing](course_documentation/exercises/7_refactor/7_refactor_with_confidence.md)
+
+
 - 11:30 Lunch
 - 13:00 Application Security (Stein-Arne Sivertsen)
 
