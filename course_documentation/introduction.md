@@ -25,7 +25,7 @@ software craftsmanship along the way.
 We assume generall knowledge of Python and will not go through the syntax explicitly,
 but please ask immediately if something is unclear or you want it covered a bit more.
 
-For the morning session tomorrow, Tuesday, we want to open up for requests from you for what you want us to cover. You can make suggestions by creating an issue here: https://github.com/equinor/intro-to-software-development/issues.
+For the morning session tomorrow, we want to open up for requests from you for what you want us to cover. You can make suggestions by posting them in the Microsoft Teams meeting chat, and we will try to address them if we have spare time.
 
 ## Exercises
 
