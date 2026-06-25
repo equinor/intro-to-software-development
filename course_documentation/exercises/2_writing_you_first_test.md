@@ -45,7 +45,6 @@ def test_length_of_string() -> None:
 
 - We typically don't want to push directly to main. It is up to each team to decide how to do this, but a common thing is to create pull requests (often from a personal fork to the main repository).
 - Add branch protection on main branch.
-- Only allow "Rebase and Merge".
 - Commit your work. This time we will create a new branch and make a pull request
   - `git status`
   - `git checkout -b implement-find-average`
@@ -53,7 +52,7 @@ def test_length_of_string() -> None:
   - Manually add the untracked files with `git add <filename>`
   - `git commit -m "Implement find average`
   - `git push origin implement-find-average`
-- Create a Pull Request and click "Rebase and Merge" when you think it looks correct.
+- Create a Pull Request and click "Merge" when you think it looks correct.
 - Click "Delete" on the branch that had the Pull Request.
 - Clean up your local git environment
   - `git status`
