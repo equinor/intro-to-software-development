@@ -47,7 +47,7 @@ def test_length_of_string() -> None:
 - Add branch protection on main branch.
 - Commit your work. This time we will create a new branch and make a pull request
   - `git status`
-  - `git checkout -b implement-find-average`
+  - `git switch -c implement-find-average`
   - `git add -p`: add changes in smaller patches / chunks / hunks
   - Manually add the untracked files with `git add <filename>`
   - `git commit -m "Implement find average`
@@ -61,6 +61,6 @@ def test_length_of_string() -> None:
   - `git lg`: notice that the origin/implement-find-average branch is gone
   - `git rebase origin/main`: This will base the current branch on top of the remote main
   - `git lg`: notice that the current branch is based on origin/main now
-  - `git checkout origin/main` or (`git checkout main` and `git rebase origin/main`)
+  - `git switch origin/main` or (`git switch main` and `git rebase origin/main`)
   - `git branch -d implement-find-average`: We can finally delete the branch locally, knowing that it did not contain anything that was not already on origin/main.
   - `git lg`: verify that the local implement-find-average branch is gone
