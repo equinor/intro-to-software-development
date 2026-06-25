@@ -2,7 +2,7 @@
 
 - Make a fork of the repository
 - Open code spaces
-- Change to the `exercises` branch with `git checkout exercises`
+- Change to the `exercises` branch with `git switch exercises`
 - Navigate the filesystem with `pwd`, `ls` and `cd`
 - Try interactive python
   - `python` or `ipython`
