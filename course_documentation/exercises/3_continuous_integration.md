@@ -86,7 +86,7 @@
 ## Accept the PR
 
 - Review your PR on GitHub.
-- Click the "Rebase and merge" button on GitHub
+- Click the "Merge" button on GitHub
 - Delete the branch on the remote origin (Press the button on GitHub)
 - Delete the local branch
   - `git lg` to see the current shape of your history
