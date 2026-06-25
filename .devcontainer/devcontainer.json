@@ -9,7 +9,7 @@
       "VARIANT": "3.13-bullseye"
     }
   },
-  "customizations": {
+   "customizations": {
     "vscode": {
       // Set *default* container specific settings.json values on container create.
       "settings": {
@@ -24,12 +24,18 @@
         "python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
         "python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
         "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
-        "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+        "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+        "github.copilot.enable": { "*": false },
+        "github.chat.agent.enabled": false,
+        "github.copilot.chat.agent.autoFix": false,
+        "github.copilot.inlineSuggest.enable": false,
+        "chat.commandCenter.enabled": false
       },
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "ms-python.python",
-        "ms-python.vscode-pylance"
+        "ms-python.vscode-pylance",
+        "-github.copilot-chat"
       ]
     }
   },
