@@ -69,7 +69,7 @@ Day 3
 - Git Commands
   - git status, git diff
   - git add -p, git commit, git push
-  - git checkout
+  - git switch
   - git pull (git fetch, git rebase)
   - git log, git log --oneline
   - git remote -v

@@ -75,7 +75,7 @@
 
 ## Commit, push and make a PR
 
-- `git checkout -b add-ci-workflow`
+- `git switch -c add-ci-workflow`
 - `git add -p`
 - `git add .github/workflows/ci.yaml`
 - `git commit -m "Add ci workflow"`
@@ -90,9 +90,8 @@
 - Delete the branch on the remote origin (Press the button on GitHub)
 - Delete the local branch
   - `git lg` to see the current shape of your history
-  - `git fetch origin --prune`
-  - `git rebase origin/main`
-  - `git checkout origin/main` or (`git checkout main` and `git rebase origin/main`)
+  - `git fetch origin --prune` to update your local state of the remote
+  - `git switch main` and `git rebase origin/main`
   - `git branch -d add-ci-workflow`
 
 # Bonus

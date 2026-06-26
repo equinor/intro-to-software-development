@@ -39,8 +39,8 @@ def test_gardners_equation():
 
 - Commit your work. Since this is a new feature, it may make sense with a new branch.
   - `git fetch origin`
-  - `git checkout origin/main` or (`git checkout main` and `git rebase origin/main`)
-  - `git checkout -b implement-gardners-equation`
+  - `git switch main` and `git rebase origin/main`
+  - `git switch -c implement-gardners-equation`
   - `git add -p`
   - `git commit -m "Add gardners equation"`
 - Note: It is good to keep the tests and the implementation in the same commit. Ideally, every commit should be able to stand on its own, i.e. the tests should pass in each commit.
