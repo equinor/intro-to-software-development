@@ -139,6 +139,7 @@ The following sections might not be included in the course, depending on time, b
 
 ### Commit changes
 
+- `git switch -c add-formatting` create a new branch to work on
 - `git add -p`
 - `git commit -m "Add code formatting check`
 
@@ -176,7 +177,7 @@ The following sections might not be included in the course, depending on time, b
 
 - `git add -p`
 - `git commit -m "Add type checking`
-- `git push origin add-ci-workflow`
+- `git push origin`
 
 ## Break the workflow
 
