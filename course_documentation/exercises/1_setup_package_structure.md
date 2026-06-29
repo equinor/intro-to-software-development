@@ -13,10 +13,11 @@
 
 ## Try to install your package
 
-- Navigate back with `cd ../..` or `cd ..` twice
+- Navigate back to the top level with `cd ../..` (or `cd ..` twice)
 - Run `pip install -e .`
-  - Note: -e means "editable mode" and let you make modifications to your code and run
+  - Note: -e means "editable mode" and lets you make modifications to your code and run
     it without having to install the package again.
+  - This will fail for now because we are missing some metadata. That's expected — we add it next.
 
 ## Add missing pieces
 
@@ -54,7 +55,7 @@
   ```
   MIT License
 
-  Copyright (c) 2024 <Your name here>
+  Copyright (c) 2026 <Your name here>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -92,34 +93,66 @@
 - Open interactive python with `python` or `ipython`
 - Run `import geo_calculator`
 - Run `geo_calculator.__file__`
+- Notice that the path points into your `src/geo_calculator/` folder, confirming the
+  editable install works. Exit with `exit()`.
 
 ## git commit
 
 Now is a good time to save the state we are in. We will do this with git. Lars Petter will give an introduction to git.
 
-- Add `.gitignore` file at top level and paste the following:
+- If missing, add `.gitignore` file at top level and paste the following:
 
   ```
-  # Distribution / packaging
+  # macOS specific files
+  .DS_Store
+  .AppleDouble
+  .LSOverride
+  Icon?
+  ._*
+  .Spotlight-V100
+  .Trashes
+
+  # Python cache & compiled files
+  __pycache__/
+  *.pyc
+  *.pyo
+  *.pyd
+  *.so
+
+  # Environments & Dependencies
+  .venv/
+  venv/
+  env/
+  ENV/
+  env.bak/
+  venv.bak/
+  .env
+
+  # Distribution / Packaging
   build/
+  develop-eggs/
   dist/
+  downloads/
   eggs/
   .eggs/
+  lib/
+  lib64/
+  parts/
+  sdist/
+  var/
+  wheels/
   *.egg-info/
+  .installed.cfg
   *.egg
+  MANIFEST
 
-  # Unit test / coverage reports
-  .cache
-  .pytest_cache/
-  __pycache__/
-
-  # Environments
-  .env
-  .venv
-  env/
-  venv/
-
-  .vscode/
+  # IDEs & Editors
+  .vscode/*
+  !.vscode/settings.json
+  !.vscode/launch.json
+  .idea/
+  *.swp
+  *.swo
   ```
 
 - Commit your work so far
