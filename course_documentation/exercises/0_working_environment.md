@@ -12,7 +12,7 @@
 - Navigate the filesystem with `pwd`, `ls` and `cd`
 - Check the tool versions you have available:
   - `python --version` 
-    - Should be 3.12 or newer 
+    - Should be 3.13 or newer 
     - If you see the error `python not found` try `python3` instead of `python`
   - `git --version`
 - Try interactive python
