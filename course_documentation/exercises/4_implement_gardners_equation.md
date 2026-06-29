@@ -11,14 +11,16 @@ We will be implementing a formula called Gardner's equation.
 - Start with adding this test to `test_calculations.py`:
 
 ```python
-def test_gardners_equation():
+def test_gardners_equation() -> None:
     velocity = 2000  # m/s
     expected_density = 2.0730949  # g/cm3
 
     # By default, approx considers numbers within a relative tolerance of 1e-6
     assert gardners_equation(velocity) == pytest.approx(expected_density)
-
 ```
+
+- Remember to import the function and `pytest` at the top of the test file:
+  `from geo_calculator.calculations import gardners_equation` and `import pytest`.
 
 - Run the tests with `pytest` and verify that they fail.
 
@@ -48,7 +50,7 @@ def test_gardners_equation():
 ## Add docstrings to function implementation
 
 - "A docstring is a string literal that occurs as the first statement in a module, function, class, or method definition." - [PEP257](https://peps.python.org/pep-0257/)
-- There are different styles for Python docstrings. The following examples uses [Google Style Docstrings](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods), but there are also NumPy Style and Spinx Style.
+- There are different styles for Python docstrings. The following examples use [Google Style Docstrings](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods), but there are also NumPy Style and Sphinx Style.
 
 - For the `find_average` function the docstring may look something like this:
 
@@ -97,7 +99,7 @@ def test_inverse_gardners_equation() -> None:
 
 ## Sanitize input for negative values
 
-- One of the requirements we may have to the function is that it should handle all kinds of input (through the argument). In this case, for example, it does not make sense to return any value if the velocity is negative, as this would have led to negative density. We may figure it is better to through a `ValueError` in this case.
+- One of the requirements we may have to the function is that it should handle all kinds of input (through the argument). In this case, for example, it does not make sense to return any value if the velocity is negative, as this would have led to negative density. We may figure it is better to throw a `ValueError` in this case.
 - First, add the following tests to `test_calculations.py`
 
 ```python
