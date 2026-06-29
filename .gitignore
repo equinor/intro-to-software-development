@@ -44,7 +44,7 @@ MANIFEST
 # IDEs & Editors
 .vscode/*
 !.vscode/settings.json
-# !.vscode/launch.json
+!.vscode/launch.json
 .idea/
 *.swp
 *.swo
