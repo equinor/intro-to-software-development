@@ -4,7 +4,9 @@
 
 - Create /tests/test_calculations.py in VS code, or with:
 
-  - `mkdir tests`, `cd tests` and `touch test_calculations.py`
+  - `mkdir tests`
+  - `cd tests`
+  - `touch test_calculations.py`
 
 - EXERCISE: In the `test_calculations.py`, write a test to test a find_average function that takes a list of numbers and returns the average. Assert that the returned average is correct. The find_average function does not yet exist, but that is intentional for now.
 
@@ -18,13 +20,26 @@ def test_length_of_string() -> None:
 
 - Start by importing the function you want to test from the relevant package in your module. `geo_calculator` is the package, `calculations` is the module and `find_average` is the function.
   (Hint: `from geo_calculator.calculations import find_average`)
-- We have not implemented this function yet, so we expect the test to fail. But this is a good starting point for Test Driven Development. First, write the test. Second, run it and see that it fails. Third, implement the function so that the test pass. Finally, refactor your solution if needed.
+- The module does not exist yet either — create `src/geo_calculator/calculations.py` so the import resolves.
+- We have not implemented this function yet, so we expect the test to fail. But this is a good starting point for Test Driven Development. First, write the test. Second, run it and see that it fails. Third, implement the function so that the test passes. Finally, refactor your solution if needed.
 
 ## Install and run tests
 
 - pip install pytest
 - pytest
 - See that the test fails
+
+Hint: if you use VS Code, check your .vscode/settings.json and add the following lines if missing:
+```json
+{
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
+```
+This will enhance your experiance with VS Code's default Test Explorer when working with Pytest.
 
 ## Make test pass
 
@@ -33,13 +48,13 @@ def test_length_of_string() -> None:
 ## Reflections
 
 - By adding tests to your code you get a lot of benefits:
-  - You can verify that your code works as intended while you write it, at least the parts you manage to write tests for to.
+  - You can verify that your code works as intended while you write it, at least the parts you manage to write tests for.
   - You can change parts of your code later with confidence, because you know you have tests that will tell you if you break something.
-  - The tests serves as documentation for how you intend the code to be used.
+  - The tests serve as documentation for how you intend the code to be used.
 - You can always write the tests later, but there are many benefits to writing them before you implement a single line of code:
-  - You clearify the requirements before you start implementing.
-  - It is more fun doing the implementation, because you know when you are done (the test pass). It can even shorten the time it takes to write the implementation.
-  - When the tests are written together with the implementation it makes the life easier for the reviewer. He or she can start with reading the test to get a good first grasp of the problem at hand, and then look at the implementation.
+  - You clarify the requirements before you start implementing.
+  - It is more fun doing the implementation, because you know when you are done (the tests pass). It can even shorten the time it takes to write the implementation.
+  - When the tests are written together with the implementation it makes life easier for the reviewers. They can start by reading the test to get a good first grasp of the problem at hand, and then look at the implementation.
 
 ## git commit
 
@@ -50,7 +65,7 @@ def test_length_of_string() -> None:
   - `git switch -c implement-find-average`
   - `git add -p`: add changes in smaller patches / chunks / hunks
   - Manually add the untracked files with `git add <filename>`
-  - `git commit -m "Implement find average`
+  - `git commit -m "Implement find average"`
   - `git push origin implement-find-average`
 - Create a Pull Request and click "Merge" when you think it looks correct.
 - Click "Delete" on the branch that had the Pull Request.
