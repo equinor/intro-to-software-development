@@ -2,6 +2,11 @@
 
 ## Create structure for the geo-calculator package
 
+> **Why a `src/` folder?** Putting your package under `src/` (the "src layout") means the
+> package is only importable once it has been installed. This prevents a common class of
+> bugs where Python accidentally imports the local source folder instead of the installed
+> package, which can hide packaging mistakes until they reach someone else's machine.
+
 - Create a /src folder with from command line or in VS Code
   - `mkdir src`
 - Create a project folder /src/geo_calculator/
@@ -95,6 +100,9 @@
 - Run `geo_calculator.__file__`
 - Notice that the path points into your `src/geo_calculator/` folder, confirming the
   editable install works. Exit with `exit()`.
+- Back in the terminal, inspect the install:
+  - `pip list` should now list `geo-calculator` (with a version and a path for editable installs)
+  - `pip show geo-calculator` shows the metadata you wrote in `pyproject.toml`
 
 ## git commit
 
@@ -158,6 +166,7 @@ Now is a good time to save the state we are in. We will do this with git. Lars P
 - Commit your work so far
 
   - `git status`: Verify that you are on your main branch
+  - Sanity check: `git status` should NOT list `.venv/` or `*.egg-info/`. If it does, your `.gitignore` is not taking effect yet — double-check its contents and location (top level).
   - `git diff`: (Optional) Scroll through to recognize your changes
   - `git add src/geo_calculator/__init__.py`
   - `git add pyproject.toml`

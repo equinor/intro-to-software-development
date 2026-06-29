@@ -41,5 +41,17 @@ your system.
       - `/Library/Frameworks/Python.framework/Versions/3.11/bin/python3`
       - `C:\Program Files\Python<Version>\`
       - `C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<Version>\`
+  - `pip -V` should also point inside the `.venv` folder
 - Upgrade pip so we start from a known-good baseline: `python -m pip install --upgrade pip`
 - Tip: deactivate the environment with `deactivate` when you are done
+
+## Tell git who you are
+
+Before your first commit, git needs to know your name and email so your commits are
+attributed correctly. In a fresh Codespace this is usually set up for you, but it is
+worth checking:
+
+- `git config --global user.name` and `git config --global user.email`
+- If either is empty, set them (use the same email as your GitHub account):
+  - `git config --global user.name "Your Name"`
+  - `git config --global user.email "you@example.com"`

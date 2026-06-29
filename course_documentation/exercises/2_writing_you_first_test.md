@@ -14,9 +14,12 @@ This is an example test that checks the length of a string:
 
 ```python
 def test_length_of_string() -> None:
-    test_string = "python"
-    assert len(test_string) == 6
+    test_string = "python"  # Arrange: set up the inputs
+    length = len(test_string)  # Act: run the thing under test
+    assert length == 6  # Assert: check the result
 ```
+
+- A good test usually follows the **Arrange – Act – Assert** (AAA) structure, as annotated above. Keeping these three phases clearly separated makes tests easy to read. (See [intro_to_unit_testing.md](../intro_to_unit_testing.md) for more on test structure.)
 
 - Start by importing the function you want to test from the relevant package in your module. `geo_calculator` is the package, `calculations` is the module and `find_average` is the function.
   (Hint: `from geo_calculator.calculations import find_average`)
@@ -28,6 +31,11 @@ def test_length_of_string() -> None:
 - pip install pytest
 - pytest
 - See that the test fails
+- Useful pytest flags while developing:
+  - `pytest -v`: verbose output, one line per test
+  - Read the failure trace carefully — pytest shows the exact assertion that failed and the values involved. Learning to read this red output is a core skill.
+  - `pytest -k find_average`: run only tests whose name matches the expression (handy once you have many tests)
+  - `pytest -x`: stop at the first failure
 
 Hint: if you use VS Code, check your .vscode/settings.json and add the following lines if missing:
 ```json
