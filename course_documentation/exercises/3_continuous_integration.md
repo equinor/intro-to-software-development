@@ -2,67 +2,72 @@
 
 ## Create workflow for GitHub Actions
 
-- As stated in the previous exercise, having tests in your code lets you make changes to the code base with confidence. When we want to commit our local work to the main code base, we want to make sure all our tests pass before we take in the changes. This can be done through a workflow running in GitHub Actions. In this exercise you will set up a workflow to run all the tests every time someone pushes to a pull request or to main.
+As stated in the previous exercise, having tests in your code lets you make changes to the code base with confidence. When we want to commit our local work to the main code base, we want to make sure all our tests pass before we take in the changes. This can be done through a workflow running in GitHub Actions. In this exercise you will set up a workflow to run all the tests every time someone pushes to a pull request or to main.
 
-- Create a .github/workflows/ci.yaml file and past the following:
+> **Important:** GitHub requires the workflow file to already exist in the target branch
+> (i.e. `main`) before it will run the workflow on pull requests targeting that branch.
+> This means you need to merge a skeleton workflow into `main` first, and only then will
+> the CI run when you open pull requests. The same rule applies whenever you add a new
+> workflow later: merge its skeleton into the target branch before expecting it to trigger.
 
-  - First, checkout the code:
+- Create a `.github/workflows/ci.yaml` file and build it up from top to bottom as follows:
 
-    ```yaml
-    jobs:
-      build:
-        runs-on: ubuntu-latest
+  1. **Triggers** — state when the workflow should run. We want it to run on every push to
+     `main` and on every pull request targeting `main`:
 
-        steps:
-          - uses: actions/checkout@v4
-    ```
+     ```yaml
+     on:
+       push:
+         branches:
+           - main
+       pull_request:
+         branches:
+           - main
+     ```
 
-  - Then, setup Python with the right version
+  2. **Job definition** — name the job and choose the runner:
 
-    ```yaml
-    ...
-      ...
-        ...
-          - name: Set up Python 3.13
-            uses: actions/setup-python@v5
-            with:
-              python-version: "3.13"
-    ```
+     ```yaml
+     jobs:
+       build:
+         runs-on: ubuntu-latest
+     ```
 
-  - Then, install dependencies (including dev dependencies):
+  3. **Steps** — list the individual steps the runner will execute. Start by checking out
+     the code:
 
-    ```yaml
-    ...
-      ...
-        ...
-          - name: Install dependencies
-            run: |
-              python -m pip install --upgrade pip
-              pip install .[dev]
-    ```
+     ```yaml
+         steps:
+           - uses: actions/checkout@v5
+     ```
 
-  - Then, run pytest:
+  4. **Set up Python.** Enabling `cache: pip` reuses downloaded packages between runs,
+     making the workflow faster:
 
-    ```yaml
-    ...
-      ...
-        ...
-          - name: Test with pytest
-            run: |
-              pytest
-    ```
+     ```yaml
+           - name: Set up Python 3.13
+             uses: actions/setup-python@v5
+             with:
+               python-version: "3.13"
+               cache: pip
+     ```
 
-  - Finally, to the top of the file, state when you want this workflow to be run. We want to run on every push to main and on every change or creation of pull requests.
+  5. **Install dependencies** (including dev dependencies):
 
-    ```yaml
-    on:
-      push:
-        branches:
-          - main
-      pull_request:
-        branches:
-          - main
-    ```
+     ```yaml
+           - name: Install dependencies
+             run: |
+               python -m pip install --upgrade pip
+               pip install .[dev]
+     ```
+
+  6. **Run the tests:**
+
+     ```yaml
+           - name: Test with pytest
+             run: |
+               pytest
+     ```
 
 - Add this section to `pyproject.toml`:
 
@@ -98,87 +103,128 @@
 
 The following sections might not be included in the course, depending on time, but we add it here for reference.
 
-## Check code formatting
+## Linting and code formatting with Ruff
 
-- While there are many freedoms in how you write your Python program, there are also style guides for how to write code consistently. The most renowned is PEP8 (Python Enhancement Proposal #8), written amongst others by the author of Python himself, Guido van Rossum. The authors also give some good reflections on how to relate to the style guide:
+While there are many freedoms in how you write your Python program, there are also style guides for how to write code consistently. The most renowned is [PEP8](https://peps.python.org/pep-0008/), written amongst others by the author of Python himself, Guido van Rossum.
 
-> A style guide is about consistency. Consistency with this style guide is important.
-> Consistency within a project is more important. Consistency within one module or
-> function is the most important.
->
-> However, know when to be inconsistent – sometimes style guide recommendations just
-> aren’t applicable. When in doubt, use your best judgment. Look at other examples and
-> decide what looks best. And don’t hesitate to ask!
->
-> In particular: do not break backwards compatibility just to comply with this PEP!
->
-> -- <cite>Guido van Rossum et al., [PEP8](https://peps.python.org/pep-0008/) </cite>
+For a long time the standard toolchain for enforcing this was a combination of separate tools: **Black** (formatter), **isort** (import sorter) and **flake8** (linter). Today, [Ruff](https://docs.astral.sh/ruff/) replaces all three. It is written in Rust, runs orders of magnitude faster, and is configured in one place.
 
-- A popular tool for checking that your code is consistent with this guide is Black.
+Reference: the core difference is that formatters handle how your code looks, while linters handle how your code works. A formatter restructures visual elements like spacing, indentation, and line breaks without changing code behavior. A linter analyzes code structure to find potential bugs, security issues, and violations of programming best practices.
 
-> The coding style used by Black can be viewed as a strict subset of PEP 8.
->
-> -- <cite>[The Black code style](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html)</cite>
+### Try it out
 
-- Run `pip install black`
-- Run `black --help` to see the help text with an usage guide
-- Run `black --check .`
-- Run `black --diff .`
-- Run `black .` to let Black format all your .py files in the current directory
-- Extend the dev requirements in pyproject.toml to be `dev = ["black", "pytest"]`
-- Add Black check to the ci.yaml workflow file:
+- Add `ruff` to your dev dependencies in `pyproject.toml`:
 
-  ```yaml
-  ...
-    ...
-      ...
-        - name: Check code formatting
-          run: |
-            black --check .
+  ```toml
+  [project.optional-dependencies]
+  dev = ["pytest", "ruff"]
   ```
 
-### Commit changes
+- Run `pip install .[dev]` to pick up the new dependency
+- Run `ruff format --check .` to check formatting without changing files
+- Run `ruff format .` to auto-format
+- Run `ruff check .` to lint
+- Run `ruff check --fix .` to auto-fix safe issues
 
-- `git switch -c add-formatting` create a new branch to work on
-- `git add -p`
-- `git commit -m "Add code formatting check`
+### Configure Ruff in pyproject.toml
+
+Add the following sections to `pyproject.toml`. This configures both the linter and the formatter:
+
+```toml
+[tool.ruff]
+line-length = 127
+
+[tool.ruff.lint]
+ignore = ["E203", "E501", "E712"]
+select = [
+    "B",        # bugbear
+    "E",        # pycodestyle
+    "F",        # pyflakes
+    "I",        # isort
+    "PYI",      # flake8-pyi
+    "UP",       # pyupgrade
+    "RUF",      # ruff
+    "W",        # pycodestyle
+    "T10",      # flake8-debugger
+    "PIE",      # flake8-pie
+    "PGH",      # pygrep-hooks
+    "PLE",      # pylint error
+    "PLW",      # pylint warning
+    "PLR1714",  # Consider merging multiple comparisons
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
+```
+
+Referece:
+
+| Rule set | What it catches |
+| B bugbear	| Likely bugs and bad practices (e.g. mutable default args, bare except) |
+| W pycodestyle warnings	| Whitespace / style warnings (default only has errors) |
+| I isort	| Unsorted/ungrouped imports |
+| UP pyupgrade	| Outdated syntax (typing.List → list, str.format → f-strings, etc.) |
+| T10	| Leftover breakpoint() / pdb calls |
+| PGH	| Overly broad # type: ignore and # noqa comments |
+| PIE	| Misc code simplifications |
+| PLE/PLW/PLR1714	| Select pylint rules (redundant comparisons, etc.) |
+| RUF	| Ruff-specific rules (unused noqa, ambiguous chars, etc.) |
+| PYI	| Mostly relevant for .pyi stub files — less useful here |
+
+
+### Add Ruff to the CI workflow
+
+Add a new step to `ci.yaml` after the test step:
+
+```yaml
+      - name: Lint check
+        run: |
+          ruff check .
+
+      - name: Format check
+        run: |
+          ruff format --check .
+```
 
 ## Type hinting and type checking
 
-- Type hints was introduced in Python 3.5 with [PEP484](https://peps.python.org/pep-0484/). The description states: "The proposal is strongly inspired by mypy", which is the tool we will be using to check type hinting.
-- "Python is a dynamic language, so usually you’ll only see errors in your code when you attempt to run it. Mypy is a static checker, so it finds bugs in your programs without even running them!" - https://mypy.readthedocs.io/en/stable/
+- Type hints were introduced in Python 3.5 with [PEP484](https://peps.python.org/pep-0484/). The description states: "The proposal is strongly inspired by mypy", which is the tool we will be using to check type hinting.
+- "Python is a dynamic language, so usually you'll only see errors in your code when you attempt to run it. Mypy is a static checker, so it finds bugs in your programs without even running them!" - https://mypy.readthedocs.io/en/stable/
 
 - Run `mypy --help` for help text
 - Run `mypy` or `mypy .` to check all your .py files in the current directory
-- Extend the dev requirements in pyproject.toml to be `dev = ["black", "mypy", "pytest"]`
+- Extend the dev requirements in pyproject.toml to be `dev = ["pytest", "ruff", "mypy"]`
 - Add a new section in pyproject.toml:
 
-  ```yaml
+  ```toml
   [tool.mypy]
   exclude = ["build"]
   files = ["src", "tests"]
   ```
 
-- Add the following to ci.yaml
+- Add the following step to `ci.yaml`:
 
   ```yaml
-  ...
-    ...
-      ...
         - name: Type checking
           run: |
             mypy
   ```
 
 - Add type hints to the `find_average` function.
-  <a title="def find_average(numbers: Sequence[int]) -> float:"> (Hover for hint) </a>
+
+  Hint: 
+  ```def find_average(numbers: Sequence[int]) -> float:```
 
 ### Commit, push and observe the changes to the PR
 
 - `git add -p`
-- `git commit -m "Add type checking`
+- `git commit -m "Add linting and type checking"`
 - `git push origin`
 
 ## Break the workflow
 
-- Experiment with adding changes that breaks either the tests, the formatting or the static type checking
+- Experiment with adding changes that break the tests, the formatting or the static type checking
