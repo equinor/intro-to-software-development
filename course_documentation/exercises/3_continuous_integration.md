@@ -12,7 +12,13 @@ As stated in the previous exercise, having tests in your code lets you make chan
 
 - Create a `.github/workflows/ci.yaml` file and build it up from top to bottom as follows:
 
-  1. **Triggers** — state when the workflow should run. We want it to run on every push to
+  1. **Name** (optional but nice) — this is the label shown in the GitHub "Actions" tab:
+
+     ```yaml
+     name: CI
+     ```
+
+  2. **Triggers** — state when the workflow should run. We want it to run on every push to
      `main` and on every pull request targeting `main`:
 
      ```yaml
@@ -25,7 +31,7 @@ As stated in the previous exercise, having tests in your code lets you make chan
            - main
      ```
 
-  2. **Job definition** — name the job and choose the runner:
+  3. **Job definition** — name the job and choose the runner:
 
      ```yaml
      jobs:
@@ -33,7 +39,7 @@ As stated in the previous exercise, having tests in your code lets you make chan
          runs-on: ubuntu-latest
      ```
 
-  3. **Steps** — list the individual steps the runner will execute. Start by checking out
+  4. **Steps** — list the individual steps the runner will execute. Start by checking out
      the code:
 
      ```yaml
@@ -41,7 +47,7 @@ As stated in the previous exercise, having tests in your code lets you make chan
            - uses: actions/checkout@v5
      ```
 
-  4. **Set up Python.** Enabling `cache: pip` reuses downloaded packages between runs,
+  5. **Set up Python.** Enabling `cache: pip` reuses downloaded packages between runs,
      making the workflow faster:
 
      ```yaml
@@ -52,7 +58,7 @@ As stated in the previous exercise, having tests in your code lets you make chan
                cache: pip
      ```
 
-  5. **Install dependencies** (including dev dependencies):
+  6. **Install dependencies** (including dev dependencies):
 
      ```yaml
            - name: Install dependencies
@@ -61,7 +67,7 @@ As stated in the previous exercise, having tests in your code lets you make chan
                pip install .[dev]
      ```
 
-  6. **Run the tests:**
+  7. **Run the tests:**
 
      ```yaml
            - name: Test with pytest
@@ -78,6 +84,13 @@ As stated in the previous exercise, having tests in your code lets you make chan
 
   - Note: This replaces the need for running `pip install pytest` and pytest is installed when we run `pip install .[dev]`
 
+- Tip: run the exact same checks locally **before** pushing, for a much faster feedback loop than waiting for CI:
+
+  ```bash
+  pip install .[dev]
+  pytest
+  ```
+
 ## Commit, push and make a PR
 
 - `git switch -c add-ci-workflow`
@@ -91,6 +104,7 @@ As stated in the previous exercise, having tests in your code lets you make chan
 ## Accept the PR
 
 - Review your PR on GitHub.
+- Notice the status check at the bottom of the PR — wait for it to go green before merging. You can click "Details" to watch the run in the Actions tab.
 - Click the "Merge" button on GitHub
 - Delete the branch on the remote origin (Press the button on GitHub)
 - Delete the local branch
@@ -98,6 +112,16 @@ As stated in the previous exercise, having tests in your code lets you make chan
   - `git fetch origin --prune` to update your local state of the remote
   - `git switch main` and `git rebase origin/main`
   - `git branch -d add-ci-workflow`
+
+## Require the check to pass (branch protection)
+
+Now that CI runs on every pull request, we can make GitHub enforce it so that nobody
+(including you) can merge a PR while the tests are red.
+
+- On GitHub, go to **Settings → Branches → Add branch ruleset** (or "Add rule") for `main`
+- Enable **Require status checks to pass before merging** and select the `build` job
+- Optionally enable **Require a pull request before merging** to block direct pushes to `main`
+- Open a PR that intentionally breaks a test and confirm the "Merge" button is now blocked
 
 # Bonus
 
