@@ -228,3 +228,4 @@ Add a new step to `ci.yaml` after the test step:
 ## Break the workflow
 
 - Experiment with adding changes that break the tests, the formatting or the static type checking
+- Try to think if the sequence of steps we run here makes sense, or something can be updated there?
