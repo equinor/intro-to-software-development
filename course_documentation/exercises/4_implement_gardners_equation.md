@@ -120,3 +120,67 @@ def test_inverse_gardners_equation_negative_density() -> None:
   - `git add -p`
   - `git commit -m "Implement inverse gardner's equation"`
   - `git push origin implement-gardners-equation`
+
+## Bonus: test many values at once with `parametrize`
+
+Instead of writing one test per input, `pytest` lets you run the same test body over many
+inputs with `@pytest.mark.parametrize`. This is a clean way to cover several cases:
+
+```python
+import pytest
+
+from geo_calculator.calculations import gardners_equation
+
+
+@pytest.mark.parametrize(
+    "velocity, expected_density",
+    [
+        (2000, 2.0730949),
+        (3000, 2.2942567),
+        (4000, 2.4653393),
+    ],
+)
+def test_gardners_equation_multiple_values(
+    velocity: float, expected_density: float
+) -> None:
+    assert gardners_equation(velocity) == pytest.approx(expected_density)
+```
+
+- Run `pytest -v` and notice that each parameter set shows up as its own test.
+
+## Bonus: edge case at zero velocity
+
+- We already reject negative velocities. What should happen at exactly `velocity = 0`?
+  Decide on the desired behaviour, add a test that documents it, and make it pass:
+
+```python
+def test_gardners_equation_zero_velocity() -> None:
+    assert gardners_equation(0) == pytest.approx(0)
+```
+
+## Bonus: vectorize with NumPy
+
+`numpy` is already a dependency of the package, but we have not used it yet. In real
+geoscience work you rarely have a single velocity — you have a whole seismic trace. NumPy
+lets the same equation operate on a whole array at once, which is both shorter to write
+and much faster than a Python loop. This is a small taste of the Data Science part of the
+course (Day 3).
+
+- Add a test that passes an array of velocities and expects an array of densities:
+
+```python
+import numpy as np
+
+
+def test_gardners_equation_array_input() -> None:
+    velocities = np.array([2000, 3000, 4000])
+    expected = np.array([2.0730949, 2.2942567, 2.4653393])
+
+    result = gardners_equation(velocities)
+
+    np.testing.assert_allclose(result, expected, rtol=1e-6)
+```
+
+- If you implemented `gardners_equation` with `**` and basic arithmetic, it may already work
+  on arrays thanks to NumPy broadcasting. If you used input validation like `if velocity < 0`,
+  you will need to adapt it to work element-wise (hint: `np.any(velocity < 0)`).
