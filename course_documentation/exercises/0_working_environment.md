@@ -43,7 +43,8 @@ your system.
       - `C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<Version>\`
   - `pip -V` should also point inside the `.venv` folder
 - Upgrade pip so we start from a known-good baseline: `python -m pip install --upgrade pip`
-- Tip: deactivate the environment with `deactivate` when you are done
+- Tip: if you need to deactivate the environment, you can do that by running the `deactivate` command
+- Tip2: if something goes off with your virtual environment, there is nothing wrong with deactivating it, deleting it (delete the .venv directory in your project's root), and then starting fresh.
 
 ## Tell git who you are
 
