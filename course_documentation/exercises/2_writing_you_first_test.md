@@ -66,6 +66,10 @@ This will enhance your experiance with VS Code's default Test Explorer when work
 
 ## git commit
 
+We will have another intro on what remotes are and how to work with them.
+
+- Start by pushing your changes from the previous section
+- `git push main`
 - We typically don't want to push directly to main. It is up to each team to decide how to do this, but a common thing is to create pull requests (often from a personal fork to the main repository).
 - Add branch protection on main branch.
 - Commit your work. This time we will create a new branch and make a pull request
