@@ -4,19 +4,19 @@
 
 Day 1
 
-- 09:00 Git & Python, Part 1 (Lars Petter Øren Hauge and Thomas Sundvoll)
+- 09:00 Git & Python, Part 1 (Lars Petter Øren Hauge and Valerii Martell)
   - [Introduction](course_documentation/introduction.md)
   - [Exercise 0: Working Environment](course_documentation/exercises/0_working_environment.md)
   - [Exercise 1: Setup Package Structure](course_documentation/exercises/1_setup_package_structure.md)
 - 11:30 Lunch
-- 13:00 Git & Python, Part 2 (Lars Petter Øren Hauge and Thomas Sundvoll)
+- 13:00 Git & Python, Part 2 (Lars Petter Øren Hauge and Valerii Martell)
   - [Exercise 2: Writing Your First Test](course_documentation/exercises/2_writing_you_first_test.md)
   - [Exercise 3: Continuous Integration](course_documentation/exercises/3_continuous_integration.md)
   - [Exercise 4: Implement Gardner's Equation](course_documentation/exercises/4_implement_gardners_equation.md)
 
 Day 2
 
-- 09:00 Git & Python, Part 3 (Lars Petter Øren Hauge and Thomas Sundvoll)
+- 09:00 Git & Python, Part 3 (Lars Petter Øren Hauge and Valerii Martell)
   - Recap from yesterday
     - Setup codespaces and virtual environment
     - Python packaging structure
