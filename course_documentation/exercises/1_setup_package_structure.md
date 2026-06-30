@@ -175,6 +175,5 @@ Now is a good time to save the state we are in. We will do this with git. Lars P
   - `git add .gitignore`
   - `git diff --staged`: To see which changes you have added (to the staging area)
   - `git commit -m "Setup package structure"`
-  - `git push origin main`
 
 - Note: Good article on writing good commit messages: https://cbea.ms/git-commit/
