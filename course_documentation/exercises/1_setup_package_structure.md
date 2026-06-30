@@ -7,7 +7,7 @@
 > bugs where Python accidentally imports the local source folder instead of the installed
 > package, which can hide packaging mistakes until they reach someone else's machine.
 
-- Create a /src folder with from command line or in VS Code
+- Create an /src folder with from command line or in VS Code
   - `mkdir src`
 - Create a project folder /src/geo_calculator/
   - `cd src`
