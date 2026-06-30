@@ -12,6 +12,7 @@
 
 - The packaging structure of Python and how a modern Python
   package typically looks.
+  ```
     The Standard Directory Structure:
       my_project/
         ├── .github/                  # CI/CD workflows (e.g., GitHub Actions)
@@ -28,6 +29,7 @@
         ├── LICENSE                   # Software license (e.g., MIT, Apache 2.0)
         ├── README.md                 # Project description and setup guide
         └── pyproject.toml            # Unified tool and build configuration
+  ```
 - Unit tests and the concept of Test Driven Development
 - How to embed git into our workflow with basic commands (and possibly some more advanced
   if we have time)
