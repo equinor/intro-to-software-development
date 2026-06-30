@@ -12,6 +12,22 @@
 
 - The packaging structure of Python and how a modern Python
   package typically looks.
+    The Standard Directory Structure:
+      my_project/
+        ├── .github/                  # CI/CD workflows (e.g., GitHub Actions)
+        ├── docs/                     # Project documentation (Sphinx or MkDocs)
+        ├── src/                      # Source code directory (prevents import bugs)
+        │   └── my_package/           # The actual importable Python package
+        │       ├── __init__.py       # Exposes package public API
+        │       ├── core.py           # Core business logic
+        │       └── utils.py          # Utility functions
+        ├── tests/                    # Test suite mirroring the package layout
+        │   ├── conftest.py           # Pytest fixtures and shared configuration
+        │   └── test_core.py          # Unit tests
+        ├── .gitignore                # Files excluded from version control
+        ├── LICENSE                   # Software license (e.g., MIT, Apache 2.0)
+        ├── README.md                 # Project description and setup guide
+        └── pyproject.toml            # Unified tool and build configuration
 - Unit tests and the concept of Test Driven Development
 - How to embed git into our workflow with basic commands (and possibly some more advanced
   if we have time)
