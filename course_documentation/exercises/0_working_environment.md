@@ -5,7 +5,6 @@
 - Make a fork of the repository (top-right "Fork" button on GitHub)
 - Open Codespaces (green "Code" button → "Codespaces" → "Create codespace")
 - (optionally) Authenticate with your account to sync up your settings and extensions
-- Change to the `exercises` branch with `git switch exercises`
 
 ## Find your way around
 
