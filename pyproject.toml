@@ -16,3 +16,6 @@ dynamic = ["version"]
 
 [project.urls]
 repository = "https://github.com/khsa371/intro-to-software-development"
+
+[project.optional-dependencies]
+dev = ["pytest"]
