@@ -1,0 +1,18 @@
+# https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+
+[build-system]
+requires = ["setuptools>=64.0", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-calculator"
+authors = [{ name = "Kristoffer Samsonsen" }]
+description = "Introduction to Software Development course and demo Python package"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { file = "LICENSE" }
+dependencies = ["numpy"]
+dynamic = ["version"]
+
+[project.urls]
+repository = "https://github.com/khsa371/intro-to-software-development"
