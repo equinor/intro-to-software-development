@@ -14,3 +14,6 @@ build-backend = "setuptools.build_meta"
 
   [project.urls]
   repository = "https://github.com/Essi01/intro-to-software-development"
+
+  [project.optional-dependencies]
+  dev = ["pytest"]
