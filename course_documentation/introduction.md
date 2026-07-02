@@ -2,7 +2,7 @@
 
 ## Round around the table
 
-- Name
+- Name 
 - Where and what you study
 - Internship location (Trondheim, Bergen, Stavanger, Oslo)
 - Short about the project
