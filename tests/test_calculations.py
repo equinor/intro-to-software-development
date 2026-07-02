@@ -1,6 +1,7 @@
-from geo_calculator.calculations import find_average
-from geo_calculator.calculations import gardners_equation
 import pytest
+
+from geo_calculator.calculations import find_average, gardners_equation
+
 
 def test_length_of_string() -> None:
     test_string = "python"  # Arrange: set up the inputs
