@@ -12,8 +12,9 @@ build-backend = "setuptools.build_meta"
   dependencies = ["numpy"]
   dynamic = ["version"]
 
-  [project.urls]
-  repository = "https://github.com/Essi01/intro-to-software-development"
 
   [project.optional-dependencies]
   dev = ["pytest"]
+
+  [project.urls]
+  repository = "https://github.com/Essi01/intro-to-software-development"
