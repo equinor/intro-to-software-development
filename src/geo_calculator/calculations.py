@@ -3,4 +3,4 @@ def find_average(numbers):
 
 
 def gardners_equation(vp):
-    return 0.31 * (vp ** 0.25)
+    return 0.31 * (vp**0.25)

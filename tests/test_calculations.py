@@ -14,6 +14,7 @@ def test_find_average_given_list_of_numbers() -> None:
     results = find_average(test_list)
     assert results == 3
 
+
 def test_gardners_equation() -> None:
     velocity = 2000  # m/s
     expected_density = 2.0730949  # g/cm3
