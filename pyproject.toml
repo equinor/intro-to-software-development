@@ -13,7 +13,36 @@ dependencies = ["numpy"]
 dynamic = ["version"]
 
 [project.optional-dependencies]
-dev = ["pytest"]
+dev = ["pytest", "ruff"]
 
 [project.urls]
 repository = "https://github.com/valerii-martell/intro-to-software-development-test"
+
+[tool.ruff]
+line-length = 127
+
+[tool.ruff.lint]
+ignore = ["E203", "E501", "E712"]
+select = [
+    "B",        # bugbear
+    "E",        # pycodestyle
+    "F",        # pyflakes
+    "I",        # isort
+    "PYI",      # flake8-pyi
+    "UP",       # pyupgrade
+    "RUF",      # ruff
+    "W",        # pycodestyle
+    "T10",      # flake8-debugger
+    "PIE",      # flake8-pie
+    "PGH",      # pygrep-hooks
+    "PLE",      # pylint error
+    "PLW",      # pylint warning
+    "PLR1714",  # Consider merging multiple comparisons
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
