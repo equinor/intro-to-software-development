@@ -29,4 +29,13 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-``
+
+      - name: Lint check
+        run: |
+          ruff check src
+          ruff check tests
+
+      - name: Format check
+        run: |
+          ruff format --check src
+          ruff format --check tests
