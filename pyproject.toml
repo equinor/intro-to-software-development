@@ -11,6 +11,8 @@ requires-python = ">=3.13"
 license = { file = "LICENSE" }
 dependencies = ["numpy"]
 dynamic = ["version"]
+[project.optional-dependencies]
+dev = ["pytest"]
 
 [project.urls]
 repository = "https://github.com/sigrunvi/intro-to-software-development"
